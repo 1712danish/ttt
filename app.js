@@ -16,12 +16,12 @@ app.post("/getresult", async (req, res) => {
   await Promise.all(
     getroll.map((e) =>
       axios
-        .get(`https://terriblytinytales.com/testapi?rollnumber=${parseInt(e)}`)
+        .get(`http://proedge.me/test.php?rollnumber=${parseInt(e)}`)
         .then((data) => {
           return data.data;
         })
         .then((report) => {
-          result[e] = report;
+          result[e] = report
         })
     )
   );
